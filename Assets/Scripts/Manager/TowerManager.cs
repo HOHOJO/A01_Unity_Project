@@ -43,6 +43,8 @@ public class TowerManager : MonoBehaviour
 
     public void IndexUp(TowerObject gameObject)
     {
+        gameObject.index = Index;
+        Index++;
         Towers.Add(gameObject);
         Resource += gameObject.data.Production;
     }
