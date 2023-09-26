@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class GameProgress : MonoBehaviour
 {
-    [SerializeField] private GameObject clearPanel;
-    [SerializeField] private GameObject endPanel;
+    [SerializeField] private Animator clearPanelAnimator;
+    [SerializeField] private Animator endPanelAnimator;
 
     private bool isVictory = false;
     private bool isDefeat = false;
 
     void Start()
     {
-        clearPanel.SetActive(false);
-        endPanel.SetActive(false);
+        clearPanelAnimator.gameObject.SetActive(false);
+        endPanelAnimator.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,12 +22,14 @@ public class GameProgress : MonoBehaviour
         // 게임에서 승리 시
         if(isVictory)
         {
-            clearPanel.SetActive(true);
+            clearPanelAnimator.gameObject.SetActive(true);
+            clearPanelAnimator.SetTrigger("Show");
         }
         // 게임에서 패배 시
         if(isDefeat)
         {
-            endPanel.SetActive(false);
+            endPanelAnimator.gameObject.SetActive(false);
+            endPanelAnimator.SetTrigger("Show");
         }
     }
 
