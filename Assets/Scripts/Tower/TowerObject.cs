@@ -7,22 +7,27 @@ using UnityEngine.UI;
 public class TowerObject : MonoBehaviour
 {
     public TowerData data;
+    private TowerManager manage;
     public int index;
     public Sprite sprite;
     public GameObject bullet;
     private TowerSlot curSlot;
-    public bool dead;
+    public bool dead = false;
     private Transform bulletSpawnPoint;
-    private List<GameObject> coll = new List<GameObject>();
     private float timer = 0.0f;
     private int waitingTime = 2;
 
     // Start is called before the first frame update
     void Start()
     {
+        manage = GameObject.Find("TowerManager").GetComponent<TowerManager>();
         bulletSpawnPoint = this.transform.Find("BulletSpawnPoint");
         waitingTime = 2;
         timer = 0.0f;
+        if(data.Production>0)
+        {
+            manage.Resource += data.Production;
+        }
     }
 
     // Update is called once per frame
@@ -48,11 +53,6 @@ public class TowerObject : MonoBehaviour
         {
             if(bullet!= null) { Attack();}  
         }
-    }
-
-    public void Production()
-    {
-        if (bullet == null) { }
     }
 
     public void Dead()

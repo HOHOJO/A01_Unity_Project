@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6129431744974194258}
   m_Layer: 0
   m_Name: test_resource_zombi
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5948238586435581614}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &837563950037890775
 MonoBehaviour:
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 210972b05d513c542acfeb8d4ef7cb41, type: 2}
+  manage: {fileID: 1177788225253016213, guid: b8615fc811fe14e40b6f2669f6f92494, type: 3}
   index: 0
   sprite: {fileID: 21300000, guid: 43c02f0e0207cfc4b91d2ff7e89d8f5d, type: 3}
   bullet: {fileID: 0}
