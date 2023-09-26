@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89ee03e4bafd7314a84d16d2c3df4212, type: 3}
-  m_Name: test_Zombie
+  m_Name: test_resource_zombi
   m_EditorClassIdentifier: 
-  ZombieName: "\uC77C\uBC18\uC880\uBE44"
-  ZombieInfo: "\uC77C\uBC18\uC801\uC778 \uC880\uBE44\uB2E4"
+  ZombieName: "\uC0DD\uC0B0\uC880\uBE44"
+  ZombieInfo: "\uC790\uC6D0\uC744 \uC0DD\uC0B0\uD55C\uB2E4"
   type: 0
-  sprite: {fileID: 0}
-  Power: 3
+  sprite: {fileID: 21300000, guid: 43c02f0e0207cfc4b91d2ff7e89d8f5d, type: 3}
+  Power: 0
   Health: 10
   Level: 1
-  Intersection: 3
-  Production: 0
+  Intersection: 0
+  Production: 3
   Resource: 3

@@ -44,17 +44,15 @@ public class TowerObject : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("만남");
         if (collision.tag == "Enemy")
         {
-            Attack();
-            Debug.Log("만남");
+            if(bullet!= null) { Attack();}  
         }
     }
 
     public void Production()
     {
-
+        if (bullet == null) { }
     }
 
     public void Dead()
