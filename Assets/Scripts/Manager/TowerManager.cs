@@ -38,7 +38,7 @@ public class TowerManager : MonoBehaviour
     public void Production()
     {
         storage += Resource;
-        Text.text = storage.ToString();
+        //Text.text = storage.ToString();
     }
 
     public void IndexUp(TowerObject gameObject)
