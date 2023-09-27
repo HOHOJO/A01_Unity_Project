@@ -6,6 +6,7 @@ public class GameProgress : MonoBehaviour
 {
     [SerializeField] private Animator clearPanelAnimator;
     [SerializeField] private Animator endPanelAnimator;
+    [SerializeField] private TimeController timeController;
 
     private bool isVictory = false;
     private bool isDefeat = false;
@@ -41,5 +42,17 @@ public class GameProgress : MonoBehaviour
     public void LoseGame()
     {
         isDefeat = true;
+    }
+
+    // TimerController에서 시간이 종료될 때 호출할 메서드
+    public void TimeExpired()
+    {
+        // 시간이 종료되었을 때 게임 승리 처리
+        if (!isVictory && !isDefeat)
+        {
+            isVictory = true;
+            clearPanelAnimator.gameObject.SetActive(true);
+            clearPanelAnimator.SetTrigger("Show");
+        }
     }
 }
