@@ -45,33 +45,53 @@ public class TowerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    Vector2 pos = main.ScreenToWorldPoint(Input.mousePosition);
+        //    if (Mouse)
+        //    {
+        //        hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+        //        if (hit.collider!=null)
+        //        {
+        //            if (hit.transform.CompareTag("Tower"))
+        //            {
+        //                EmptyTower = TowerPrefab1;
+        //                Mouse = false;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if(EmptyTower!=null)
+        //        {
+        //            Instantiate(EmptyTower, pos, Quaternion.identity) ;
+        //            Mouse = true;
+        //        }
+        //    }
+
+        //}
+
+        if(Input.GetMouseButtonDown(0)) 
         {
             Vector2 pos = main.ScreenToWorldPoint(Input.mousePosition);
-            if (Mouse)
+            
+            if(!Mouse)
             {
-                Debug.Log("여기 옴");
                 hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
-                if (hit.collider!=null)
+                if (hit.collider != null)
                 {
-                    Debug.Log("여기 들어옴");
-                    if (hit.transform.CompareTag("Tower"))
+                    if (hit.transform.CompareTag("Tower")) // 태그 바꿔야함
                     {
-                        EmptyTower = TowerPrefab1;
-                        Mouse = false;
+                        //BuildTower();
+                        Instantiate(EmptyTower, pos, Quaternion.identity);
+                        Mouse = true;
                     }
                 }
-            }
-            else
-            {
-                if(EmptyTower!=null)
+                else
                 {
-                    Debug.Log("설치할거임");
-                    Instantiate(EmptyTower, pos, Quaternion.identity) ;
-                    Mouse = true;
+                    Debug.Log("설치위치 파악실패");
                 }
             }
-
         }
 
         Resource_time += Time.deltaTime;
@@ -95,5 +115,39 @@ public class TowerManager : MonoBehaviour
         Index++;
         Towers.Add(gameObject);
         Resource += gameObject.data.Production;
+    }
+
+    public void SelectTower(int i) // 포탑 선택
+    {
+        if(Mouse) 
+        {
+            switch (i)
+            {
+                case 0:
+                    EmptyTower = TowerPrefab1;
+                    Mouse = false;
+                    Debug.Log("선택1");
+                    Debug.Log(Mouse);
+                    break;
+
+                case 1:
+                    EmptyTower = TowerPrefab2;
+                    Mouse = false;
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+            }
+        }
+    }
+
+    public void BuildTower()
+    {
+        Instantiate(EmptyTower, pos, Quaternion.identity);
     }
 }

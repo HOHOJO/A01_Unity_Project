@@ -34,7 +34,8 @@ public class TowerObject : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        
+        Dead();
+        if(dead){ Destroy(this);}
     }
 
     public void Attack()
@@ -57,7 +58,10 @@ public class TowerObject : MonoBehaviour
 
     public void Dead()
     {
-
+        if(data.Health<=0)
+        {
+            dead = true;
+        }
     }
 
     public void OnButtonClick()
