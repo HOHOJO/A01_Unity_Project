@@ -20,3 +20,5 @@ MonoBehaviour:
   Health: 10
   Level: 1
   Intersection: 3
+  Production: 0
+  Resource: 3

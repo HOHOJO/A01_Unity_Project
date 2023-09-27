@@ -32,4 +32,7 @@ public class TowerData : ScriptableObject
     public float Health; // 체력
     public int Level; // 레벨(강화시 업)
     public float Intersection; // 사거리
+    public float Production;// 생산력
+    public float Resource; // 설치시 자원소모량
+
 }
