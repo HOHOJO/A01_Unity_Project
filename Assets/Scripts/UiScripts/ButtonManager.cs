@@ -13,6 +13,8 @@ public class ButtonManager : MonoBehaviour
 
     private bool isMenuAcvite = false;
 
+    private Animator menuAnimator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,8 @@ public class ButtonManager : MonoBehaviour
         closeBtn.gameObject.SetActive(false);
 
         Time.timeScale = 1f;
+
+        menuAnimator = menu.GetComponent<Animator>();
     }
 
     void OnButtonClick() 
@@ -39,7 +43,9 @@ public class ButtonManager : MonoBehaviour
 
             isMenuAcvite = true;
 
-            Time.timeScale = 0f;
+            menuAnimator.Play("MenuPopup");
+            Invoke("PauseGameTime", 1f);
+  
         }
         else 
         {
@@ -60,11 +66,20 @@ public class ButtonManager : MonoBehaviour
         soundMenu.SetActive(false);
 
         isMenuAcvite = false;
+
+        menuAnimator.Play("ClosePopup");
+
+        Time.timeScale = 1f;
     }
     void SoundBtnClick() 
     {
         menu.SetActive(false);
         soundMenu.SetActive(true);
+    }
+
+    void PauseGameTime() 
+    {
+        Time.timeScale = 0f;
     }
 
 }
