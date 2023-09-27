@@ -74,16 +74,22 @@ public class TowerManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0)) 
         {
             Vector2 pos = main.ScreenToWorldPoint(Input.mousePosition);
-            hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+            
             if(!Mouse)
             {
+                hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
                 if (hit.collider != null)
                 {
-                    if (hit.transform.CompareTag("여기다 타일 태그 이름"))
+                    if (hit.transform.CompareTag("Tower")) // 태그 바꿔야함
                     {
-                        BuildTower();
-                        Mouse = false;
+                        //BuildTower();
+                        Instantiate(EmptyTower, pos, Quaternion.identity);
+                        Mouse = true;
                     }
+                }
+                else
+                {
+                    Debug.Log("설치위치 파악실패");
                 }
             }
         }
@@ -120,6 +126,8 @@ public class TowerManager : MonoBehaviour
                 case 0:
                     EmptyTower = TowerPrefab1;
                     Mouse = false;
+                    Debug.Log("선택1");
+                    Debug.Log(Mouse);
                     break;
 
                 case 1:
