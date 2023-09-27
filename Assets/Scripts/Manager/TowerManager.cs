@@ -80,7 +80,7 @@ public class TowerManager : MonoBehaviour
                 hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
                 if (hit.collider != null)
                 {
-                    if (hit.transform.CompareTag("Tower")) // 태그 바꿔야함
+                    if (hit.transform.CompareTag("Tile")) // 태그 바꿔야함
                     {
                         //BuildTower();
                         Instantiate(EmptyTower, pos, Quaternion.identity);
