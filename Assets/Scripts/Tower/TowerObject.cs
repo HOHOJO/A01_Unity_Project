@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.UI.Image;
 
 public class TowerObject : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class TowerObject : MonoBehaviour
     {
         if(timer>waitingTime)
         {
-            Instantiate<GameObject>(this.bullet, this.bulletSpawnPoint.position, Quaternion.identity);
+            Instantiate<GameObject>(this.bullet, this.bulletSpawnPoint.position, bullet.transform.rotation);
             timer = 0f;
         }
 
