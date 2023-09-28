@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1177788225253016213
 MonoBehaviour:
@@ -48,7 +48,8 @@ MonoBehaviour:
   Resource: 3
   Resource_time: 0
   Text: {fileID: 0}
-  TowerPrefab1: {fileID: 509818321779519050, guid: ab56676e8972a32429d9f4b760cb51a5, type: 3}
+  main: {fileID: 0}
+  TowerPrefab1: {fileID: 3542032461137225526, guid: 47a3303f150123a45aef1346629cc281, type: 3}
   TowerPrefab2: {fileID: 2625667771457608568, guid: 1d21b8732a7f5124dbdac9dbb6ff0bce, type: 3}
   TowerPrefab3: {fileID: 0}
   TowerPrefab4: {fileID: 0}
