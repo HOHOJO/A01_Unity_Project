@@ -12,11 +12,26 @@ public class TowerObject : MonoBehaviour
     public int index;
     public Sprite sprite;
     public GameObject bullet;
-    private TowerSlot curSlot;
+    //private TowerSlot curSlot;
     public bool dead = false;
     private Transform bulletSpawnPoint;
     private float timer = 0.0f;
     private int waitingTime = 2;
+
+    private float Hit_timer = 0.0f;
+    private int wating_hit = 1;
+
+    [Header("Info")]
+    public string ZombieName; //이름
+    public string ZombieInfo; // 설명
+
+    [Header("State")]
+    public float Power;  // 공격력
+    public float Health; // 체력
+    public int Level; // 레벨(강화시 업)
+    public float Intersection; // 사거리
+    public float Production;// 생산력
+    public float Resource; // 설치시 자원소모량
 
     // Start is called before the first frame update
     void Start()
@@ -25,18 +40,25 @@ public class TowerObject : MonoBehaviour
         bulletSpawnPoint = this.transform.Find("BulletSpawnPoint");
         waitingTime = 2;
         timer = 0.0f;
-        if(data.Production>0)
+        Hit_timer = 0.0f;
+        wating_hit = 1;
+
+        if(Production>0)
         {
-            manage.Resource += data.Production;
+            manage.Resource += Production;
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("피" + Health);
         timer += Time.deltaTime;
+        Hit_timer += Time.deltaTime;
         Dead();
         if(dead){ Destroy(this);}
+        
     }
 
     public void Attack()
@@ -53,16 +75,30 @@ public class TowerObject : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            if(bullet!= null) { Attack();}  
+            if(bullet!= null) { Attack();}
+            if(Vector3.Distance(collision.transform.position, this.transform.position)<=2f)
+            {
+                if(Hit_timer>wating_hit)
+                {
+                    Debug.Log("피" + Health);
+                    HitTower();
+                    Hit_timer = 0f;
+                }
+            }
         }
     }
 
     public void Dead()
     {
-        if(data.Health<=0)
+        if(Health<=0)
         {
             dead = true;
         }
+    }
+
+    public void HitTower()
+    {
+        Health -= 1f;
     }
 
     public void OnButtonClick()
