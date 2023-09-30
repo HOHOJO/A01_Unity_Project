@@ -99,6 +99,7 @@ public class TowerManager : MonoBehaviour
         {
             Production();
             Resource_time = 0f;
+            Debug.Log(storage);
         }
 
     }
@@ -133,6 +134,8 @@ public class TowerManager : MonoBehaviour
                 case 1:
                     EmptyTower = TowerPrefab2;
                     Mouse = false;
+                    Debug.Log("º±≈√1");
+                    Debug.Log(Mouse);
                     break;
 
                 case 2:
