@@ -12,12 +12,15 @@ public class TowerObject : MonoBehaviour
     public int index;
     public Sprite sprite;
     public GameObject bullet;
-    //private TowerSlot curSlot;
+    public GameObject Me;
+
+
     public bool dead = false;
+
+
     private Transform bulletSpawnPoint;
     private float timer = 0.0f;
     private int waitingTime = 2;
-
     private float Hit_timer = 0.0f;
     private int wating_hit = 1;
 
@@ -57,7 +60,7 @@ public class TowerObject : MonoBehaviour
         timer += Time.deltaTime;
         Hit_timer += Time.deltaTime;
         Dead();
-        if(dead){ Destroy(this);}
+        if(dead){ Destroy(Me);}
         
     }
 
@@ -76,7 +79,7 @@ public class TowerObject : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             if(bullet!= null) { Attack();}
-            if(Vector3.Distance(collision.transform.position, this.transform.position)<=2f)
+            if(Vector3.Distance(collision.transform.position, this.transform.position)<=1f)
             {
                 if(Hit_timer>wating_hit)
                 {

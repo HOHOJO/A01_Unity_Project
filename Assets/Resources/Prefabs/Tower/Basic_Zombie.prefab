@@ -35,7 +35,7 @@ Transform:
   - {fileID: 8314462246478980092}
   - {fileID: 458929195495910292}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4102207309235981473
 Rigidbody2D:
@@ -80,6 +80,7 @@ MonoBehaviour:
   index: 0
   sprite: {fileID: 21300000, guid: 6e48ef5623949af488eadda5b8d59549, type: 3}
   bullet: {fileID: 3181858301249654138, guid: 36b37083611b000408efdd95fb012976, type: 3}
+  Me: {fileID: 3542032461137225526}
   dead: 0
   ZombieName: 
   ZombieInfo: 
@@ -132,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.5, y: 1}
+  m_Size: {x: 10, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &4899913982576405063
 GameObject:

@@ -120,6 +120,7 @@ public class TowerManager : MonoBehaviour
 
     public void SelectTower(int i) // 포탑 선택
     {
+        Mouse = true;
         if(Mouse) 
         {
             switch (i)
@@ -134,7 +135,7 @@ public class TowerManager : MonoBehaviour
                 case 1:
                     EmptyTower = TowerPrefab2;
                     Mouse = false;
-                    Debug.Log("선택1");
+                    Debug.Log("선택2");
                     Debug.Log(Mouse);
                     break;
 
