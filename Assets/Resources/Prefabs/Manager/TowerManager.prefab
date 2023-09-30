@@ -50,6 +50,6 @@ MonoBehaviour:
   Text: {fileID: 0}
   main: {fileID: 0}
   TowerPrefab1: {fileID: 3542032461137225526, guid: 47a3303f150123a45aef1346629cc281, type: 3}
-  TowerPrefab2: {fileID: 2625667771457608568, guid: 1d21b8732a7f5124dbdac9dbb6ff0bce, type: 3}
+  TowerPrefab2: {fileID: 3941868635476796698, guid: a38c967122cd58d4f993edafa76a0349, type: 3}
   TowerPrefab3: {fileID: 0}
   TowerPrefab4: {fileID: 0}
