@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
+    private static ButtonManager instance;
+
     public Button settingBtn;
     public Button closeBtn;
     public GameObject menu;
@@ -16,7 +18,19 @@ public class ButtonManager : MonoBehaviour
     private Animator menuAnimator;
 
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = null;
+            DontDestroyOnLoad(gameObject);
+        }
+        else 
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
 
@@ -80,6 +94,14 @@ public class ButtonManager : MonoBehaviour
     void PauseGameTime() 
     {
         Time.timeScale = 0f;
+    }
+
+
+    public static ButtonManager GetInstance()
+    {
+        return instance;
+
+        //ButtonManager buttonManager = ButtonManager.GetInstance();
     }
 
 }

@@ -14,6 +14,8 @@ public class SoundManager : MonoBehaviour
 
     public GameObject BgmMixer;
 
+
+
     public static SoundManager Instance
     {
         get
@@ -73,4 +75,23 @@ public class SoundManager : MonoBehaviour
     }
 
 
+
+
+
+
+    //private bool isPaused = false; 배경음 사운드 퍼즈
+
+    //private void Update()
+    //{
+    //    if (Time.timeScale == 0 && !isPaused)
+    //    {
+    //        audioSource.Pause();
+    //        isPaused = true;
+    //    }
+    //    else if(Time.timeScale !=0 &&isPaused)
+    //    {
+    //        audioSource.UnPause();
+    //        isPaused = false;
+    //    }
+    //}
 }
