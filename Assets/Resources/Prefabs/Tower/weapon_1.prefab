@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: cfa9e621c05f57a48b23833b3647a0bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,8 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1b11c19c6587664bba8683270ab5eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBullet: {fileID: 3181858301249654138}
   speed: 5
-  rotate: 50
+  dmg: 3
 --- !u!61 &1499871539165524272
 BoxCollider2D:
   m_ObjectHideFlags: 0

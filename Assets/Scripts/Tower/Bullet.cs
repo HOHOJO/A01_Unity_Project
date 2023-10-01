@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject myBullet;
     public float speed = 1f;
+    public float dmg = 3f;
     //[SerializeField][Range(1f, 100f)] float rotate = 50f;
     // Start is called before the first frame update
     void Start()
@@ -23,5 +25,13 @@ public class Bullet : MonoBehaviour
         //this.transform.Rotate(0, 0, rotate *Time.deltaTime);
         float moveX = speed * Time.deltaTime;
         transform.Translate(0,moveX, 0);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Destroy(myBullet);
+        }
     }
 }
