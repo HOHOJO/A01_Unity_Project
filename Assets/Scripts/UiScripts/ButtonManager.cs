@@ -66,8 +66,6 @@ public class ButtonManager : MonoBehaviour
         else 
         {
             menu.SetActive(false);
-
-
             soundMenu.SetActive(false);
 
             isMenuAcvite = false;
