@@ -9,13 +9,14 @@ public class ButtonManager : MonoBehaviour
 
     public Button settingBtn;
     public Button closeBtn;
+    public Button SoundPopupBtn;
     public GameObject menu;
     public GameObject soundMenu;
     public Button soundBtn;
 
     private bool isMenuAcvite = false;
 
-    private Animator menuAnimator;
+
 
 
     private void Awake()
@@ -38,14 +39,15 @@ public class ButtonManager : MonoBehaviour
         settingBtn.onClick.AddListener(OnButtonClick);
         closeBtn.onClick.AddListener(CloseButtonClick);
         soundBtn.onClick.AddListener(SoundBtnClick);
+        SoundPopupBtn.onClick.AddListener(CloseSoundPopup);
 
         menu.SetActive(false);
         soundMenu.SetActive(false);
-        closeBtn.gameObject.SetActive(false);
+ 
 
         Time.timeScale = 1f;
 
-        menuAnimator = menu.GetComponent<Animator>();
+
     }
 
     void OnButtonClick() 
@@ -53,18 +55,18 @@ public class ButtonManager : MonoBehaviour
         if (!isMenuAcvite)
         {
             menu.SetActive(true);
-            closeBtn.gameObject.SetActive(true);
-
+          
             isMenuAcvite = true;
-
-            menuAnimator.Play("MenuPopup");
             Invoke("PauseGameTime", 1f);
-  
+            ClickSound();
+
+
+
         }
         else 
         {
             menu.SetActive(false);
-            closeBtn.gameObject.SetActive(false);
+
 
             soundMenu.SetActive(false);
 
@@ -76,12 +78,11 @@ public class ButtonManager : MonoBehaviour
     void CloseButtonClick() 
     {
         menu.SetActive(false);
-        closeBtn.gameObject.SetActive(false);
+
         soundMenu.SetActive(false);
 
         isMenuAcvite = false;
 
-        menuAnimator.Play("ClosePopup");
 
         Time.timeScale = 1f;
     }
@@ -95,6 +96,11 @@ public class ButtonManager : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
+    void CloseSoundPopup() 
+    {
+        soundMenu.SetActive(false);
+        menu.SetActive(true);
+    }
 
 
     public static ButtonManager GetInstance()
@@ -102,6 +108,10 @@ public class ButtonManager : MonoBehaviour
         return instance;
 
         //ButtonManager buttonManager = ButtonManager.GetInstance();
+    }
+    void ClickSound() 
+    {
+        TestSoundManager.Instance.PlaySE("ClickSound");
     }
 
 }

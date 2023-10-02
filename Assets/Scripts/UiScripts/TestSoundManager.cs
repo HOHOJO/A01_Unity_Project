@@ -35,12 +35,15 @@ public class TestSoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this) 
+        if (instance == null)
         {
-            Destroy(this.gameObject);
-            return;
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
+        else 
+        {
+            Destroy(gameObject);
+        }
 
         foreach (Sound sound in bgmSounds)
         {
