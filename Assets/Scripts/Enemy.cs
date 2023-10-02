@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
             SpawnManager._instance.isSpawn[int.Parse(transform.parent.name) - 1] = false;
             Destroy(this.gameObject);
         }
-        
+
+         
     }
     public void TakeDamage(int damage)
     {
@@ -33,7 +34,7 @@ public class Enemy : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.gameObject.tag == "Ball")
+        if(coll.gameObject.tag == "Bullet")
         {
             Hp -= 1f;
             Destroy(coll.gameObject);
