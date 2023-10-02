@@ -56,12 +56,10 @@ public class TowerObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("ÇÇ" + Health);
         timer += Time.deltaTime;
         Hit_timer += Time.deltaTime;
         Dead();
-        if(dead){ Destroy(Me);}
-        
+        if(dead){ Destroy(Me);}    
     }
 
     public void Attack()
@@ -83,7 +81,6 @@ public class TowerObject : MonoBehaviour
             {
                 if(Hit_timer>wating_hit)
                 {
-                    Debug.Log("ÇÇ" + Health);
                     HitTower();
                     Hit_timer = 0f;
                 }
