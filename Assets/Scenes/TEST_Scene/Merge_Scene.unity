@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &68842009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4141950894980702659, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &208976380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,6 +460,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+--- !u!114 &715861014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4027099831301699131, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &820269354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,6 +629,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957981890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4638455855305475011, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1030557009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,6 +692,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 1385617520}
+    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+      propertyPath: closeBtn
+      value: 
+      objectReference: {fileID: 957981890}
+    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+      propertyPath: soundBtn
+      value: 
+      objectReference: {fileID: 715861014}
+    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+      propertyPath: soundMenu
+      value: 
+      objectReference: {fileID: 1308261717}
+    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+      propertyPath: settingBtn
+      value: 
+      objectReference: {fileID: 1311809015}
+    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+      propertyPath: SoundPopupBtn
+      value: 
+      objectReference: {fileID: 1108702659}
     - target: {fileID: 6857214160311855147, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
       propertyPath: m_Name
       value: ButtonManager
@@ -674,6 +725,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 822918d45b68de7488808dd74dea0cb8, type: 3}
+--- !u!114 &1108702659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5360779925678294878, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1202440402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -812,6 +874,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001b8916fe9c17e48be0f6adf8ee2672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1251188213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3870754873151346352, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1308261717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1131172905310113628, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1311809015 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8990638560093519280, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1385617520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9187101601816287284, guid: 36012ba415e5cd845a5caa3ed51367ab, type: 3}
+  m_PrefabInstance: {fileID: 618281075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400858268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1754,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6308671385190938849, guid: 7193a184328a02248a19be48e90d588b, type: 3}
+      propertyPath: BgmMixer
+      value: 
+      objectReference: {fileID: 1251188213}
+    - target: {fileID: 6308671385190938849, guid: 7193a184328a02248a19be48e90d588b, type: 3}
+      propertyPath: SfxMixer
+      value: 
+      objectReference: {fileID: 68842009}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
