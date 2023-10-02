@@ -10,6 +10,7 @@ public class StageManager : MonoBehaviour
 
     public GameObject zombies;
     public GameObject Plants;
+    public GameObject stageClearPanel;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class StageManager : MonoBehaviour
     {
         stageText.text = stageNum.ToString();
 
+        // 이전 스테이지의 플레이어 오브젝트, 적 오브젝트 모두 제거
         if(zombies != null)
         {
             Destroy(zombies);
@@ -36,5 +38,7 @@ public class StageManager : MonoBehaviour
         {
             Destroy(Plants);
         }
+
+        stageClearPanel.SetActive(false);
     }
 }

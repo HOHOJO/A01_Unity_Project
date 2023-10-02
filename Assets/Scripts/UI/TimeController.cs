@@ -12,6 +12,7 @@ public class TimeController : MonoBehaviour
     private float sliderSpeed = 2.0f;
     public GameObject stageClearPanel;
 
+    public GameProgress gameProgress;
     private void Start()
     {
         currentTime = 0f; // slider 시작위치 0에서 시작
