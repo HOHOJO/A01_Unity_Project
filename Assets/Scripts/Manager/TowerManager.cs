@@ -90,13 +90,14 @@ public class TowerManager : MonoBehaviour
             Production();
             Resource_time = 0f;
         }
+        Text.text = storage.ToString();
 
     }
 
     public void Production() // »ý»ê
     {
         storage += Resource;
-        //Text.text = storage.ToString();
+        
         towerData.Production = storage;
     }
 
