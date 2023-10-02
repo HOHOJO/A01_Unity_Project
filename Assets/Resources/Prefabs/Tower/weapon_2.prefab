@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1499871539165524272}
   - component: {fileID: 6443862408587344648}
   m_Layer: 0
-  m_Name: weapon_1
+  m_Name: weapon_2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,8 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myBullet: {fileID: 3181858301249654138}
   level: 0
-  speed: 5
-  dmg: 3
+  speed: 7
+  dmg: 5
 --- !u!61 &1499871539165524272
 BoxCollider2D:
   m_ObjectHideFlags: 0

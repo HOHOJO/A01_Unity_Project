@@ -5,8 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject myBullet;
-    public float speed = 1f;
-    public float dmg = 3f;
+    public int level;
+    public float speed;
+    public float dmg;
     //[SerializeField][Range(1f, 100f)] float rotate = 50f;
     // Start is called before the first frame update
     void Start()
@@ -33,5 +34,11 @@ public class Bullet : MonoBehaviour
         {
             Destroy(myBullet);
         }
+    }
+
+    public void LevelUp_Bullet()
+    {
+        dmg += 2;
+        speed += 0.5f;
     }
 }
