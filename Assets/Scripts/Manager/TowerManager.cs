@@ -14,6 +14,7 @@ public class TowerManager : MonoBehaviour
     private int waitingTime = 10; // 생산시간(10초에 한번씩)
     private List<TowerObject> Towers = new List<TowerObject>(); // 타워 리스트
     private int Index = 0;
+    public TowerData towerData;
 
     [SerializeField]
     private Camera main; // 카메라
@@ -39,6 +40,7 @@ public class TowerManager : MonoBehaviour
     void Start()
     {
         Index = 0;
+        towerData.Production = storage;
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class TowerManager : MonoBehaviour
                     {
                         //BuildTower();
                         storage -= 3;
+                        towerData.Production = storage;
                         Instantiate(EmptyTower, pos, Quaternion.identity);  // 설치
                         Mouse = true; // 마우스 잠금 풀기
                     }
@@ -64,6 +67,18 @@ public class TowerManager : MonoBehaviour
                 else
                 {
                     Debug.Log("설치위치 파악실패");
+                }
+            }
+            else
+            {
+                hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
+                if (hit.collider != null)// 아무것도 없으면 무시한다.
+                {
+                    if (hit.transform.CompareTag("Tower")) 
+                    {
+
+                        
+                    }
                 }
             }
         }
@@ -82,6 +97,7 @@ public class TowerManager : MonoBehaviour
     {
         storage += Resource;
         //Text.text = storage.ToString();
+        towerData.Production = storage;
     }
 
     public void IndexUp(TowerObject gameObject) // 타워 인덱스 지정(사용안됨)
