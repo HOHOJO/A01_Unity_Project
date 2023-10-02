@@ -107,11 +107,10 @@ public class ButtonManager : MonoBehaviour
     {
         return instance;
 
-        //ButtonManager buttonManager = ButtonManager.GetInstance();
     }
     void ClickSound() 
     {
-        TestSoundManager.Instance.PlaySE("ClickSound");
+        SoundManager.Instance.PlaySE("ClickSound");
     }
 
 }
