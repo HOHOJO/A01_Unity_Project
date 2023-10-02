@@ -1,3 +1,10 @@
-# A01_Unity_Project
-타워 테스트법
-prefab에서 testTower, testEnamy 씬에 꺼내서 실행
+# A01_Unity_Project 
+A01조 - 좀비vs식물
+
+- 게임맵 생성 및 배치
+- 타워 생성 및 업그레이드
+- 적의 움직임과 스폰
+- 타워 공격 로직
+- 자원관리
+- 게임 진행 상태 표시
+- 게임 오버 및 승리 조건
