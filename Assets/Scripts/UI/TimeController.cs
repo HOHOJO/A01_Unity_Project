@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimeController : MonoBehaviour
 {
     public Slider timerSlider;
-    public float totalTime = 120f;
+    public float totalTime = 70f;
     private float currentTime = 0f;
 
     private float sliderSpeed = 2.0f;

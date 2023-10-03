@@ -43,8 +43,8 @@ public class ButtonManager : MonoBehaviour
         closeBtn.onClick.AddListener(CloseButtonClick);
         soundBtn.onClick.AddListener(SoundBtnClick);
         SoundPopupBtn.onClick.AddListener(CloseSoundPopup);
-        StageBtn.onClick.AddListener(Stage);
-        ReplayBtn.onClick.AddListener(Replay);
+        //StageBtn.onClick.AddListener(Stage);
+        //ReplayBtn.onClick.AddListener(Replay);
 
         menu.SetActive(false);
         soundMenu.SetActive(false);

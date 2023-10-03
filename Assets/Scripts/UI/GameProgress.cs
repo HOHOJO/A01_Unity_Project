@@ -8,7 +8,7 @@ public class GameProgress : MonoBehaviour
 {
     [SerializeField] private Animator clearPanelAnimator;
     [SerializeField] private Animator endPanelAnimator;
-    [SerializeField] private float gameTime = 120f;
+    [SerializeField] private float gameTime = 70f;
    
 
     private bool isVictory = false;

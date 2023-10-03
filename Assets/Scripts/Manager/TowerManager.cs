@@ -40,6 +40,7 @@ public class TowerManager : MonoBehaviour
     {
         Index = 0;
         towerData.Production = storage;
+        Text.text = storage.ToString();
     }
 
     // Update is called once per frame
