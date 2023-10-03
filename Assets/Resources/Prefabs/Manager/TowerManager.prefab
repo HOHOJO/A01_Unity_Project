@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1177788225253016213
 MonoBehaviour:
@@ -49,8 +49,11 @@ MonoBehaviour:
   Resource_time: 0
   Text: {fileID: 0}
   towerData: {fileID: 11400000, guid: 7ba8f0feaec0f754caadf4c7ca7db408, type: 2}
+  HpBar: {fileID: 1327780958590432668, guid: 528b3af5b6c11c0429abf88d6e24ed6b, type: 3}
   main: {fileID: 0}
-  TowerPrefab1: {fileID: 3542032461137225526, guid: 47a3303f150123a45aef1346629cc281, type: 3}
-  TowerPrefab2: {fileID: 3941868635476796698, guid: a38c967122cd58d4f993edafa76a0349, type: 3}
+  TowerPrefab1: {fileID: 3542032461137225526, guid: 47a3303f150123a45aef1346629cc281,
+    type: 3}
+  TowerPrefab2: {fileID: 3941868635476796698, guid: a38c967122cd58d4f993edafa76a0349,
+    type: 3}
   TowerPrefab3: {fileID: 0}
   TowerPrefab4: {fileID: 0}

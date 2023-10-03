@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.UI.Image;
 using TMPro;
+using Unity.VisualScripting;
 
 public class TowerObject : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class TowerObject : MonoBehaviour
     public GameObject bullet3;
     private GameObject Emptybullet;
     public GameObject Me;
-    public GameObject m_goHpBar;
+    //public Slider HpBar_Slider;
 
     public bool dead = false;
 
@@ -31,12 +32,13 @@ public class TowerObject : MonoBehaviour
     [Header("Info")]
     public string ZombieName; //이름
     public string ZombieInfo; // 설명
-    public TextMeshProUGUI LevelText;
+   // public TextMeshProUGUI LevelText;
     public GameObject levelup_popup;
     public GameObject No_levelup;
 
     [Header("State")]
-    public float Health; // 체력
+    public float MaxHealth; // 체력
+    private float Health;
     public int Level; // 레벨(강화시 업)
     public float Intersection; // 사거리
     public float Production;// 생산력
@@ -46,14 +48,17 @@ public class TowerObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         manage = GameObject.Find("TowerManager").GetComponent<TowerManager>();
         bulletSpawnPoint = this.transform.Find("BulletSpawnPoint");
+
         waitingTime = 2;
         timer = 0.0f;
         Hit_timer = 0.0f;
         wating_hit = 1;
         LevelUp_cost = 5;
-        LevelText.text = Level.ToString();
+        Health = MaxHealth;
+        //LevelText.text = Level.ToString();
 
         Emptybullet = bullet1;
 
@@ -61,7 +66,7 @@ public class TowerObject : MonoBehaviour
         {
             manage.Resource += Production;
         }
-        
+
     }
 
     // Update is called once per frame
@@ -70,8 +75,10 @@ public class TowerObject : MonoBehaviour
         timer += Time.deltaTime;
         Hit_timer += Time.deltaTime;
         Dead();
-        if(dead){ Destroy(Me);}
-        
+        if(dead){
+            manage.Resource -= Production;
+            Destroy(Me);
+        }
     }
 
     public void Attack()
@@ -102,7 +109,7 @@ public class TowerObject : MonoBehaviour
 
     public void Dead()
     {
-        if(Health<=0)
+        if(MaxHealth <= 0)
         {
             dead = true;
         }
@@ -110,7 +117,7 @@ public class TowerObject : MonoBehaviour
 
     public void HitTower()
     {
-        Health -= 1f;
+        MaxHealth -= 1f;
     }
 
     public void ButtonClick()
@@ -145,11 +152,20 @@ public class TowerObject : MonoBehaviour
 
                 this.Level += 1;
                 Debug.Log(this.Level);
-                this.Health *= 1.5f;
+                this.MaxHealth *= 1.5f;
+                this.Health=this.MaxHealth;
                 this.Production *= 1.5f;
                 manage.storage -= LevelUp_cost;
                 this.LevelUp_cost *= 2;
-                this.levelup_popup.SetActive(false);        
+                this.levelup_popup.SetActive(false);
+                if(this.Level<3)
+                {
+                    //LevelText.text = Level.ToString();
+                }
+                else
+                {
+                    //LevelText.text = "Max";
+                }
             }
         }
         else
