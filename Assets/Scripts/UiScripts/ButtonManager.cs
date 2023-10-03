@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class ButtonManager : MonoBehaviour
     public GameObject menu;
     public GameObject soundMenu;
     public Button soundBtn;
+    public Button StageBtn;
+    public Button ReplayBtn;
 
     private bool isMenuAcvite = false;
 
@@ -40,6 +43,8 @@ public class ButtonManager : MonoBehaviour
         closeBtn.onClick.AddListener(CloseButtonClick);
         soundBtn.onClick.AddListener(SoundBtnClick);
         SoundPopupBtn.onClick.AddListener(CloseSoundPopup);
+        StageBtn.onClick.AddListener(Stage);
+        ReplayBtn.onClick.AddListener(Replay);
 
         menu.SetActive(false);
         soundMenu.SetActive(false);
@@ -58,9 +63,6 @@ public class ButtonManager : MonoBehaviour
           
             isMenuAcvite = true;
             Invoke("PauseGameTime", 1f);
-            ClickSound();
-
-
 
         }
         else 
@@ -99,16 +101,20 @@ public class ButtonManager : MonoBehaviour
         soundMenu.SetActive(false);
         menu.SetActive(true);
     }
+    void Stage() 
+    {
+        //SceneManager.LoadScene("StageScene");
+    }
+    void Replay() 
+    {
+        SceneManager.LoadScene("Merge_scene_LHB");
+    }
 
 
     public static ButtonManager GetInstance()
     {
         return instance;
 
-    }
-    void ClickSound() 
-    {
-        SoundManager.Instance.PlaySE("ClickSound");
     }
 
 }
