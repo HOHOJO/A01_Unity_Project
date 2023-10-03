@@ -58,8 +58,15 @@ public class SoundManager : MonoBehaviour
         PlayBGM("BackgroundMusic");
 
     }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlaySE("ClickSound");
+        }
+    }
 
-    public void PlayBGM(string soundName)
+    public void PlayBGM(string soundName)//bgm재생
     {
         if (soundDictionary.ContainsKey(soundName))
         {
@@ -73,7 +80,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySE(string _soundName) 
+    public void PlaySE(string _soundName) //효과음재생
     {
         for (int i = 0; i < sfxSounds.Length; i++) 
         {
