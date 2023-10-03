@@ -46,4 +46,10 @@ public class TimeController : MonoBehaviour
         // StageClearPanel을 활성화
         stageClearPanel.SetActive(true);
     }
+
+    public void ResetTime()
+    {
+        currentTime = 0f;
+        UpdateSlider();
+    }
 }
