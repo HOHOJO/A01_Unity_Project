@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,7 @@ public class ButtonManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 
     void Start()
@@ -44,11 +46,11 @@ public class ButtonManager : MonoBehaviour
         soundBtn.onClick.AddListener(SoundBtnClick);
         SoundPopupBtn.onClick.AddListener(CloseSoundPopup);
         //StageBtn.onClick.AddListener(Stage);
-        //ReplayBtn.onClick.AddListener(Replay);
+        ReplayBtn.onClick.AddListener(Replay);
 
         menu.SetActive(false);
         soundMenu.SetActive(false);
- 
+
 
         Time.timeScale = 1f;
 
@@ -62,17 +64,17 @@ public class ButtonManager : MonoBehaviour
             menu.SetActive(true);
           
             isMenuAcvite = true;
-            Invoke("PauseGameTime", 1f);
+            PauseGameTime();
 
         }
-        else 
+        else
         {
             menu.SetActive(false);
             soundMenu.SetActive(false);
 
             isMenuAcvite = false;
 
-            Time.timeScale = 1f;
+
         }
     }
     void CloseButtonClick() 
@@ -107,8 +109,9 @@ public class ButtonManager : MonoBehaviour
     }
     void Replay() 
     {
-        //string reLoadScene = SceneManager.GetActiveScene().name;
-        //SceneManager.LoadScene(reLoadScene);
+        string reLoadScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(reLoadScene);
+        Time.timeScale = 1f;
     }
 
 
