@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1519061506593472296
 MonoBehaviour:
@@ -46,5 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageText: {fileID: 0}
   zombies: {fileID: 0}
-  Plants: {fileID: 0}
+  plants: {fileID: 0}
   stageClearPanel: {fileID: 0}
+  nextStageBtn: {fileID: 0}
+  selectStageBtn: {fileID: 0}
+  retryBtn: {fileID: 0}
+  gameEndBtn: {fileID: 0}

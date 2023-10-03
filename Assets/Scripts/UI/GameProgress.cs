@@ -9,7 +9,7 @@ public class GameProgress : MonoBehaviour
     [SerializeField] private Animator clearPanelAnimator;
     [SerializeField] private Animator endPanelAnimator;
     [SerializeField] private float gameTime = 120f;
-    public Button nextStageBtn;
+   
 
     private bool isVictory = false;
     private bool isDefeat = false;
@@ -20,7 +20,7 @@ public class GameProgress : MonoBehaviour
     {
         clearPanelAnimator.gameObject.SetActive(false);
         endPanelAnimator.gameObject.SetActive(false);
-        nextStageBtn.onClick.AddListener(NextStageBtnClick);
+        
     }
 
     // Update is called once per frame
@@ -69,10 +69,7 @@ public class GameProgress : MonoBehaviour
         endPanelAnimator.SetTrigger("Show");
     }
 
-    void NextStageBtnClick()
-    {
-        stageManager.NextStage();
-    }
+
 
 
 }
