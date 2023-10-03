@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 [System.Serializable]
 public class Sound 
 {
@@ -49,6 +50,7 @@ public class SoundManager : MonoBehaviour
         {
             soundDictionary[sound.soundName] = sound.clip;
         }
+
 
         BgmMixer.GetComponent<Slider>().onValueChanged.AddListener(SetBgmVolume);
         SfxMixer.GetComponent<Slider>().onValueChanged.AddListener(setSfxVolume);
@@ -111,5 +113,7 @@ public class SoundManager : MonoBehaviour
             player.volume = value;
         }
     }
+
+
 
 }
