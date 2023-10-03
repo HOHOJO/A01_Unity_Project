@@ -15,6 +15,7 @@ public class TowerManager : MonoBehaviour
     private List<TowerObject> Towers = new List<TowerObject>(); // 타워 리스트
     private int Index = 0;
     public TowerData towerData;
+    public GameObject HpBar;
 
     [SerializeField]
     private Camera main; // 카메라
@@ -24,8 +25,6 @@ public class TowerManager : MonoBehaviour
     [SerializeField]
     public GameObject TowerPrefab1; // 타워 1234
     public GameObject TowerPrefab2;
-    public GameObject TowerPrefab3;
-    public GameObject TowerPrefab4;
     private GameObject EmptyTower; // 설치용 빈 타워
     private bool Mouse; // 마우스 잠구기 용
 
@@ -61,6 +60,7 @@ public class TowerManager : MonoBehaviour
                         storage -= 3;
                         towerData.Production = storage;
                         Instantiate(EmptyTower, pos, Quaternion.identity);  // 설치
+                        //Instantiate(HpBar, pos, Quaternion.identity);
                         Mouse = true; // 마우스 잠금 풀기
                     }
                 }
@@ -130,14 +130,6 @@ public class TowerManager : MonoBehaviour
                         Mouse = false;
                         Debug.Log("선택2");
                         Debug.Log(Mouse);
-                        break;
-
-                    case 2:
-
-                        break;
-
-                    case 3:
-
                         break;
                 }
             }
