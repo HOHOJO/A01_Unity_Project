@@ -20,7 +20,7 @@ public class GameProgress : MonoBehaviour
     {
         clearPanelAnimator.gameObject.SetActive(false);
         endPanelAnimator.gameObject.SetActive(false);
-        
+        stageManager = GetComponent<StageManager>();
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class GameProgress : MonoBehaviour
             if (currentTime >= gameTime)
             {                
                 WinGame();
-                
+                stageManager.NextStage();
             }
 
         }
@@ -58,6 +58,7 @@ public class GameProgress : MonoBehaviour
     public void WinGame()
     {
         isVictory = true;
+        currentTime = 0f;
         clearPanelAnimator.gameObject.SetActive(true);
         clearPanelAnimator.SetTrigger("Show");
     }
@@ -65,6 +66,7 @@ public class GameProgress : MonoBehaviour
     public void LoseGame()
     {
         isDefeat = true;
+        currentTime = 0f;
         endPanelAnimator.gameObject.SetActive(true);
         endPanelAnimator.SetTrigger("Show");
     }

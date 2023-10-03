@@ -17,7 +17,7 @@ public class StageManager : MonoBehaviour
     public Button selectStageBtn;
     public Button retryBtn;
     public Button gameEndBtn;
-
+    
     void Start()
     {
         // 초기 스테이지
@@ -37,6 +37,12 @@ public class StageManager : MonoBehaviour
         {
             playergold.CurrentGold += 1000;
         }
+        TimeController timeController = FindObjectOfType<TimeController>();
+        if(timeController != null)
+        {
+            timeController.ResetTime();
+        }
+
         SetStage(currentStage);
     }
 
@@ -45,30 +51,40 @@ public class StageManager : MonoBehaviour
         stageText.text = stageNum.ToString();
 
         // 이전 스테이지의 플레이어 오브젝트, 적 오브젝트 모두 제거
-        if(zombies != null)
+        if(gameObject.tag == "tower")
         {
-            Destroy(zombies);
+            Destroy(gameObject); // "tower"태그 가진 현재 게임 오브젝트 파괴
         }
 
-        if(plants != null)
+        if(gameObject.tag == "enemy")
         {
-            Destroy(plants);
+            Destroy(gameObject); // "enemy"태그 가진 현재 게임 오브젝트 파괴
         }
 
         stageClearPanel.SetActive(false);
     }
 
-    void SelectStage()
+    public void SelectStage()
     {
         SceneManager.LoadScene(2);
     }
 
-    void RetryStage()
+    public void RetryStage()
     {
-        SceneManager.LoadScene(0);
+        if (gameObject.tag == "tower")
+        {
+            Destroy(this.gameObject); // "tower"태그 가진 현재 게임 오브젝트 파괴
+        }
+
+        if (gameObject.tag == "enemy")
+        {
+            Destroy(this.gameObject); // "enemy"태그 가진 현재 게임 오브젝트 파괴
+        }
+        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
 
-    void StartMenuStage()
+    public void StartMenuStage()
     {
         SceneManager.LoadScene(1);
     }
