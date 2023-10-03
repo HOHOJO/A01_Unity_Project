@@ -66,7 +66,7 @@ public class StageManager : MonoBehaviour
 
     public void SelectStage()
     {
-        SceneManager.LoadScene(2);
+        //SceneManager.LoadScene(2);
     }
 
     public void RetryStage()
@@ -86,6 +86,6 @@ public class StageManager : MonoBehaviour
 
     public void StartMenuStage()
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
     }
 }

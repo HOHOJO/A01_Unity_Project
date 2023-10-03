@@ -107,8 +107,8 @@ public class ButtonManager : MonoBehaviour
     }
     void Replay() 
     {
-        string reLoadScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(reLoadScene);
+        //string reLoadScene = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(reLoadScene);
     }
 
 
