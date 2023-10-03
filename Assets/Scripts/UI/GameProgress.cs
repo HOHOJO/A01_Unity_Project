@@ -35,7 +35,7 @@ public class GameProgress : MonoBehaviour
             if (currentTime >= gameTime)
             {                
                 WinGame();
-                stageManager.NextStage();
+                //stageManager.NextStage();
             }
 
         }
