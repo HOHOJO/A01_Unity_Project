@@ -72,6 +72,7 @@ public class TowerObject : MonoBehaviour
         Dead();
         if(dead){ Destroy(Me);}
         
+
     }
 
     public void Attack()
@@ -149,7 +150,15 @@ public class TowerObject : MonoBehaviour
                 this.Production *= 1.5f;
                 manage.storage -= LevelUp_cost;
                 this.LevelUp_cost *= 2;
-                this.levelup_popup.SetActive(false);        
+                this.levelup_popup.SetActive(false);
+                if(this.Level<3)
+                {
+                    LevelText.text = Level.ToString();
+                }
+                else
+                {
+                    LevelText.text = "Max";
+                }
             }
         }
         else
