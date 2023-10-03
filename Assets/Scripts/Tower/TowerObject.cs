@@ -85,6 +85,7 @@ public class TowerObject : MonoBehaviour
     {
         if(timer>waitingTime)
         {
+            SoundManager.Instance.PlaySE("AttackSound");
             Instantiate<GameObject>(this.Emptybullet, this.bulletSpawnPoint.position, Emptybullet.transform.rotation);
             timer = 0f;
         }

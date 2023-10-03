@@ -21,6 +21,7 @@ public class enemy_test : MonoBehaviour
         transform.Translate(moveX, 0, 0);
         if(hp<=0)
         {
+            SoundManager.Instance.PlaySE("MonsterDie");
             Destroy(gameObject);
         }
     }
