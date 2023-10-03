@@ -10,7 +10,7 @@ public class TextViewer : MonoBehaviour
 
     private void Update()
     {
-        textPlayerGold.text = playerGold.CurrentGold.ToString();
+        //textPlayerGold.text = playerGold.CurrentGold.ToString();
     }
 
 }

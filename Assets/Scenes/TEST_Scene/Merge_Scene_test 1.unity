@@ -694,11 +694,6 @@ PrefabInstance:
       objectReference: {fileID: 1385617520}
     - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8,
         type: 3}
-      propertyPath: StageBtn
-      value: 
-      objectReference: {fileID: 1645935516}
-    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8,
-        type: 3}
       propertyPath: closeBtn
       value: 
       objectReference: {fileID: 957981890}
@@ -707,11 +702,6 @@ PrefabInstance:
       propertyPath: soundBtn
       value: 
       objectReference: {fileID: 715861014}
-    - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8,
-        type: 3}
-      propertyPath: ReplayBtn
-      value: 
-      objectReference: {fileID: 1433353676}
     - target: {fileID: 6681839998924424543, guid: 822918d45b68de7488808dd74dea0cb8,
         type: 3}
       propertyPath: soundMenu
@@ -815,7 +805,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1223613746
 PrefabInstance:
@@ -954,18 +944,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 618281075}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1433353676 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7539723181964965591, guid: 36012ba415e5cd845a5caa3ed51367ab,
-    type: 3}
-  m_PrefabInstance: {fileID: 618281075}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1506323194 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2344606643637594029, guid: 70d9fa329ea71f241af6b9f694f53045,
@@ -1457,7 +1435,7 @@ PrefabInstance:
     - target: {fileID: 1975176651506680303, guid: f938b102a5bb9a846b14587a41e88e0b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1975176651506680303, guid: f938b102a5bb9a846b14587a41e88e0b,
         type: 3}
@@ -1632,11 +1610,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
-    - target: {fileID: 3851533750799448329, guid: 00b67c2424c049d448b08f54f5980892,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1653,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 7129951212849708751, guid: 743d14b9e5f0aaf4f9b1b17fd871e016,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7129951212849708751, guid: 743d14b9e5f0aaf4f9b1b17fd871e016,
         type: 3}
