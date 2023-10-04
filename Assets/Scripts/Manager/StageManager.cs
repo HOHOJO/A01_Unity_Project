@@ -17,6 +17,7 @@ public class StageManager : MonoBehaviour
     public Button selectStageBtn;
     public Button retryBtn;
     public Button gameEndBtn;
+    public Button retryBtn2;
     
     void Start()
     {
@@ -26,6 +27,7 @@ public class StageManager : MonoBehaviour
         selectStageBtn.onClick.AddListener(SelectStage);
         retryBtn.onClick.AddListener(RetryStage);
         gameEndBtn.onClick.AddListener(StartMenuStage);
+        retryBtn2.onClick.AddListener(RetryStage2);
     }
 
     public void NextStage()
@@ -71,17 +73,16 @@ public class StageManager : MonoBehaviour
 
     public void RetryStage()
     {
-        if (gameObject.tag == "tower")
-        {
-            Destroy(this.gameObject); // "tower"태그 가진 현재 게임 오브젝트 파괴
-        }
+        string reLoadScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(reLoadScene);
+        Time.timeScale = 1f;
+    }
 
-        if (gameObject.tag == "enemy")
-        {
-            Destroy(this.gameObject); // "enemy"태그 가진 현재 게임 오브젝트 파괴
-        }
-        Time.timeScale = 0;
-        Time.timeScale = 1;
+    public void RetryStage2()
+    {
+        string reLoadScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(reLoadScene);
+        Time.timeScale = 1f;
     }
 
     public void StartMenuStage()
